@@ -22,9 +22,9 @@ class ExchangeTest extends TestCase
     {
         $this->currentDate = new \DateTime();
         // 05 mais --> 05 aout
-        $this->validDateInterval = [$this->currentDate->setTimestamp(1557160764 ), $this->currentDate->setTimestamp(1565109564 )];
+        $this->validDateInterval = [new \DateTime(), $this->currentDate->setTimestamp(1565109564 )];
         // 05 aout --> 05 mai
-        $this->noValidDateInterval = [$this->currentDate->setTimestamp(1565109564 ), $this->currentDate->setTimestamp(1565109564 )];
+        $this->noValidDateInterval = [$this->currentDate->setTimestamp(1565109564 ), new \DateTime()];
         parent::__construct($name, $data, $dataName);
     }
 
@@ -64,7 +64,7 @@ class ExchangeTest extends TestCase
     public function testExchangeUserNotValid()
     {
         $exchangeTest = new Exchange();
-        $this->expectException(\Exception::class);
+        $this->expectException(\TypeError::class);
         $valid = $exchangeTest->isValid(1,$this->mockProduct(), null, $this->validDateInterval);
 
         $this->assertTrue($valid);

@@ -64,8 +64,8 @@ class ExchangeTest extends TestCase
     public function testExchangeUserNotValid()
     {
         $exchangeTest = new Exchange();
-        $this->expectException(\TypeError::class);
-        $valid = $exchangeTest->isValid(1,$this->mockProduct(), "", $this->validDateInterval);
+        $this->expectException(\Exception::class);
+        $valid = $exchangeTest->isValid(1,$this->mockProduct(), null, $this->validDateInterval);
 
         $this->assertTrue($valid);
     }
@@ -73,7 +73,7 @@ class ExchangeTest extends TestCase
     public function testExchangeInterValDateNotValid()
     {
         $exchangeTest = new Exchange();
-        $this->expectException(\TypeError::class);
+        $this->expectException(\Exception::class);
         $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(),  $this->noValidDateInterval);
 
         $this->assertTrue($valid);

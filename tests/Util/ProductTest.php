@@ -36,7 +36,7 @@ class ProductTest extends TestCase
     public function testProductTitleNotValid()
     {
         $productTest = new Product();
-        $this->expectException(\TypeError::class);
+        $this->expectException(\Exception::class);
         $result = $productTest->isValid(1, "", $this->mockUser());
 
         $this->assertTrue($result);
@@ -45,7 +45,7 @@ class ProductTest extends TestCase
     public function testProductUserNotValid()
     {
         $productTest = new Product();
-        $this->expectException(\TypeError::class);
+        $this->expectException(\Exception::class);
         $result = $productTest->isValid(1, "", null);
 
         $this->assertTrue($result);

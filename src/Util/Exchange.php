@@ -65,7 +65,7 @@ class Exchange
      */
     public function setReceiver(User $receiver): Exchange
     {
-        if (empty($receiver)) {
+        if (!empty($receiver)) {
             $this->receiver = $receiver;
             return $this;
         }
@@ -89,7 +89,7 @@ class Exchange
      */
     public function setProduct(Product $product): Exchange
     {
-        if (empty($product)) {
+        if (!empty($product)) {
             $this->product = $product;
             return $this;
         }

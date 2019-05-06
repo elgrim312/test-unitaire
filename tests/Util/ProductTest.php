@@ -18,11 +18,37 @@ class ProductTest extends TestCase
     public function testProductIsValid()
     {
         $productTest = new Product();
-        dump($this->mockUser());
         $result = $productTest->isValid(1, "ezaezae", $this->mockUser());
 
         $this->assertTrue($result);
 
+    }
+
+    public function testProductIdNotValid()
+    {
+        $productTest = new Product();
+        $this->expectException(\TypeError::class);
+        $result = $productTest->isValid("é", "ezaezae", $this->mockUser());
+
+        $this->assertTrue($result);
+    }
+
+    public function testProductTitleNotValid()
+    {
+        $productTest = new Product();
+        $this->expectException(\TypeError::class);
+        $result = $productTest->isValid(1, "", $this->mockUser());
+
+        $this->assertTrue($result);
+    }
+
+    public function testProductUserNotValid()
+    {
+        $productTest = new Product();
+        $this->expectException(\TypeError::class);
+        $result = $productTest->isValid(1, "", null);
+
+        $this->assertTrue($result);
     }
 
     public function mockUser()

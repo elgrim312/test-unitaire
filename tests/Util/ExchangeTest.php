@@ -14,31 +14,28 @@ class ExchangeTest extends TestCase
 {
     private $currentDate;
 
-    private $dbConnection;
-
     private $validDateInterval;
 
     private $noValidDateInterval;
 
     public function __construct($name = null, array $data = [], $dataName = '')
     {
+        $this->currentDate = new \DateTime();
         // 05 mais --> 05 aout
         $this->validDateInterval = [$this->currentDate->setTimestamp(1557160764 ), $this->currentDate->setTimestamp(1565109564 )];
         // 05 aout --> 05 mai
         $this->noValidDateInterval = [$this->currentDate->setTimestamp(1565109564 ), $this->currentDate->setTimestamp(1565109564 )];
-
-        $this->currentDate = new \DateTime();
-        $this->dbConnection = new DBConnection();
         parent::__construct($name, $data, $dataName);
     }
 
     public function testExchangeIsValid()
     {
         $exchangeTest = new Exchange();
-        $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), );
+        $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), $this->validDateInterval);
 
         if ($valid) {
-           $valid =  $this->dbConnection->save($valid);
+            $dbConnection = new DBConnection();
+           $valid =  $dbConnection->save($valid);
         }
 
         $this->assertTrue($valid);

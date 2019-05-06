@@ -254,7 +254,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -272,13 +272,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.ProductTest.testProductUserNotValid">
+    <configuration name="ProductTest.testProductUserNotValid" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Util\ProductTest" file="$PROJECT_DIR$/tests/Util/ProductTest.php" method="testProductUserNotValid" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="UserTest.testAssertUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Util\UserTest" file="$PROJECT_DIR$/tests/Util/UserTest.php" method="testAssertUser" scope="Method" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ProductTest.testProductUserNotValid" />
         <item itemvalue="PHPUnit.UserTest.testAssertUser" />
       </list>
     </recent_temporary>

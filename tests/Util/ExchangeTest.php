@@ -33,11 +33,6 @@ class ExchangeTest extends TestCase
         $exchangeTest = new Exchange();
         $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), $this->validDateInterval);
 
-        if ($valid) {
-            $dbConnection = new DBConnection();
-           $valid =  $dbConnection->save($valid);
-        }
-
         $this->assertTrue($valid);
     }
 
@@ -78,7 +73,6 @@ class ExchangeTest extends TestCase
 
         $this->assertTrue($valid);
     }
-
 
     public function mockProduct()
     {

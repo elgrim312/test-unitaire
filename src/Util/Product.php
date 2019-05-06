@@ -85,6 +85,6 @@ class Product
             ->setUser($user)
         ;
 
-        return $product;
+        return true;
     }
 }

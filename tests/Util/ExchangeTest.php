@@ -8,6 +8,7 @@ use App\Util\DBConnection;
 use App\Util\Exchange;
 use App\Util\Product;
 use App\Util\User;
+use App\Util\EmailSender;
 use PHPUnit\Framework\TestCase;
 
 class ExchangeTest extends TestCase
@@ -90,5 +91,19 @@ class ExchangeTest extends TestCase
         $mock->method('isValid')->willReturn($mock);
 
         return $mock;
+    }
+
+    public function checkIfEmailWork() {
+        $email = new EmailSender();
+        $valid = $email->sendEmail("toto@gmail.com", "email sent");
+        $this->assertTrue($valid);
+    }
+
+    public function verifyEmailSent() {
+        $exchangeTest = new Exchange();
+        $exchangeTest->setEmailSender(EmailSender::class);
+        $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), $this->noValidDateInterval);
+
+        $this->assertFalse($valid);
     }
 }

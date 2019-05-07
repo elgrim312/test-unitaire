@@ -5,6 +5,7 @@ namespace App\Util;
 
 
 use Exception;
+use App\Util\EmailSender;
 
 class Exchange
 {
@@ -132,6 +133,15 @@ class Exchange
     }
 
 
+    /**
+     * @param $id
+     * @param $product
+     * @param $receiver
+     * @param $interval
+     * @return bool
+     * @throws Exception
+     * EmailSender
+     */
     public function isValid($id, $product, $receiver, $interval)
     {
         $exchange = new Exchange();
@@ -141,6 +151,10 @@ class Exchange
             ->setReceiver($receiver)
             ->setDateInterval($interval)
         ;
+        if($exchange->receiver->getMinor()) {
+            $email = new EmailSender();
+            $email->sendEmail($exchange->receiver->getEmail(), "Vous êtes mineur !");
+        }
 
         return true;
     }

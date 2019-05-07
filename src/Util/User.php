@@ -34,6 +34,20 @@ class User
     private $bornDate;
 
     /**
+     * @var bool
+     */
+    private $minor;
+
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->minor = false;
+    }
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -142,11 +156,28 @@ class User
 
         if ($interval->format('%R') == '+' ) {
             $this->bornDate = $bornDate;
+            $this->minor = $this->isMinor($bornDate);
             return $this;
         }
 
         throw new Exception('Invalide born date value');
 
+    }
+
+    /**
+     * @return bool
+     */
+    public function getMinor(): bool
+    {
+        return $this->minor;
+    }
+
+    /**
+     * @param bool $minor
+     */
+    public function setMinor(bool $minor): void
+    {
+        $this->minor = $minor;
     }
 
     public function isValid($id, $firstname, $lastname, $email, $bornDate)
@@ -158,7 +189,19 @@ class User
         $user->setLastname($lastname);
         $user->setEmail($email);
         $user->setBornDate($bornDate);
+        $user->setMinor($user->isMinor());
 
+        return true;
+    }
+
+    public function isMinor(): bool {
+        $currentDate = new \DateTime();
+        $currentDate->sub(new \DateInterval('P18Y'));
+        $interval = $this->bornDate->diff($currentDate);
+
+        if ($interval->format('%R') == '+' ) {
+            return false;
+        }
         return true;
     }
 }

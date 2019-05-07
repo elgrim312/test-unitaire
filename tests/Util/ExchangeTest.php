@@ -105,7 +105,7 @@ class ExchangeTest extends TestCase
         return $mock;
     }
 
-    public function checkIfEmailWork() {
+    public function testCheckIfEmailWork() {
         $email = new EmailSender();
         $valid = $email->sendEmail("toto@gmail.com", "email sent");
         $this->assertTrue($valid);

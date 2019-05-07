@@ -156,7 +156,7 @@ class User
 
         if ($interval->format('%R') == '+' ) {
             $this->bornDate = $bornDate;
-            $this->minor = $this->isMinor($bornDate);
+            $this->minor = $this->isMinor();
             return $this;
         }
 

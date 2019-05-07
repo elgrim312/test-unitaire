@@ -101,9 +101,5 @@ class ExchangeTest extends TestCase
 
     public function verifyEmailSent() {
         $exchangeTest = new Exchange();
-        $exchangeTest->setEmailSender(EmailSender::class);
-        $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), $this->noValidDateInterval);
-
-        $this->assertFalse($valid);
     }
 }

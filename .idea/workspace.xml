@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08621535-fd40-4f17-b85b-06775c8ab687" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Util/Exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/Exchange.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Util/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Util/ExchangeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Util/ExchangeTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Util/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Util/UserTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Util/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="187" column="40" lean-forward="true" selection-start-line="187" selection-start-column="40" selection-end-line="187" selection-end-column="40" />
+            <state relative-caret-position="-375">
+              <caret line="158" column="44" lean-forward="true" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -40,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Util/UserTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="390">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -58,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/Util/ExchangeTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="206">
+              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
               <folding>
                 <element signature="e#36#62#0#PHP" expanded="true" />
               </folding>
@@ -74,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/Util/Exchange.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="281">
-              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
               <folding>
                 <element signature="e#30#44#0#PHP" expanded="true" />
               </folding>
@@ -110,7 +107,6 @@
       <find>construct</find>
       <find>emailSender</find>
       <find>getMinor</find>
-      <find>isValid</find>
       <find>setBornDate</find>
       <find>diff</find>
       <find>format</find>
@@ -118,6 +114,7 @@
       <find>emailSender-&gt;</find>
       <find>Exchange</find>
       <find>minor</find>
+      <find>isValid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,10 +128,10 @@
         <option value="$PROJECT_DIR$/tests/Util/ProductTest.php" />
         <option value="$PROJECT_DIR$/src/Util/DBConnection.php" />
         <option value="$PROJECT_DIR$/src/Util/Product.php" />
-        <option value="$PROJECT_DIR$/tests/Util/ExchangeTest.php" />
         <option value="$PROJECT_DIR$/src/Util/Exchange.php" />
         <option value="$PROJECT_DIR$/tests/Util/UserTest.php" />
         <option value="$PROJECT_DIR$/src/Util/User.php" />
+        <option value="$PROJECT_DIR$/tests/Util/ExchangeTest.php" />
       </list>
     </option>
   </component>
@@ -258,7 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,6 +288,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,17 +345,18 @@
       <workItem from="1556291247551" duration="334000" />
       <workItem from="1556294001592" duration="30000" />
       <workItem from="1557228489302" duration="1217000" />
+      <workItem from="1557253961479" duration="291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19287000" />
+    <option name="totallyTimeSpent" value="19578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1311" height="649" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26719368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12806325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -404,6 +402,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Util/UserTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Util/ProductTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -414,13 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/EmailSender.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Util/DBConnection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -428,37 +426,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Util/ExchangeTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Util/EmailSender.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#36#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Util/Exchange.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
-          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
           <folding>
             <element signature="e#30#44#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Util/UserTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Util/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="-375">
+          <caret line="158" column="44" lean-forward="true" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/User.php">
+    <entry file="file://$PROJECT_DIR$/tests/Util/ExchangeTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="187" column="40" lean-forward="true" selection-start-line="187" selection-start-column="40" selection-end-line="187" selection-end-column="40" />
+        <state relative-caret-position="206">
+          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+          <folding>
+            <element signature="e#36#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

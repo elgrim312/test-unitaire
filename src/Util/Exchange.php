@@ -21,17 +21,17 @@ class Exchange
     /**
      * @var Product
      */
-    private $product;
+        private $product;
 
-    /**
-     * @var \DateTime
-     */
-    private $startDate;
+        /**
+         * @var \DateTime
+         */
+        private $startDate;
 
-    /**
-     * @var \DateTime
-     */
-    private $endDate;
+        /**
+         * @var \DateTime
+         */
+        private $endDate;
 
     /**
      * @return int
@@ -143,5 +143,10 @@ class Exchange
         ;
 
         return true;
+    }
+
+    public function save()
+    {
+
     }
 }

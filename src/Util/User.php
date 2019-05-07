@@ -145,7 +145,7 @@ class User
             return $this;
         }
 
-        throw new Exception('Invalide born date value');
+        throw new Exception('Invalide birthdate value');
 
     }
 

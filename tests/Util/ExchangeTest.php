@@ -32,6 +32,10 @@ class ExchangeTest extends TestCase
     {
         $exchangeTest = new Exchange();
         $valid = $exchangeTest->isValid(1, $this->mockProduct(), $this->mockUser(), $this->validDateInterval);
+        $this->assertTrue($valid);
+
+        $db = new DBConnection();
+        $valid = $db->save($this->mockExchange());
 
         $this->assertTrue($valid);
     }
@@ -88,6 +92,13 @@ class ExchangeTest extends TestCase
         $mock = $this->createMock(User::class);
 
         $mock->method('isValid')->willReturn($mock);
+
+        return $mock;
+    }
+
+    public function mockExchange()
+    {
+        $mock = $this->createMock(Exchange::class);
 
         return $mock;
     }

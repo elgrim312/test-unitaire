@@ -91,4 +91,13 @@ class UserTest extends TestCase
 
         $this->assertTrue($valid);
     }
+
+    public function testUserIsNotMinor() {
+        $userTest = new User();
+        $userTest->isValid(1, "alexandre", "vagnair", "alexandrevagnaie1@gmail.com",$this->currentDate->setTimestamp(1075123786));
+        $valid = $userTest->getMinor();
+
+        $this->assertFalse($valid);
+
+    }
 }

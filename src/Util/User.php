@@ -34,6 +34,20 @@ class User
     private $bornDate;
 
     /**
+     * @var bool
+     */
+    private $minor;
+
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->minor = false;
+    }
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -142,23 +156,57 @@ class User
 
         if ($interval->format('%R') == '+' ) {
             $this->bornDate = $bornDate;
+            $this->minor = $this->isMinor();
             return $this;
         }
 
-        throw new Exception('Invalide birthdate value');
+        throw new Exception('Invalide born date value (-13)');
+    }
 
+    /**
+     * @return bool
+     */
+    public function getMinor(): bool
+    {
+        return $this->minor;
+    }
+
+    /**
+     * @param bool $minor
+     */
+    public function setMinor(bool $minor): void
+    {
+        $this->minor = $minor;
     }
 
     public function isValid($id, $firstname, $lastname, $email, $bornDate)
     {
         $user = new User();
 
-        $user->setId($id);
-        $user->setFirstname($firstname);
-        $user->setLastname($lastname);
-        $user->setEmail($email);
-        $user->setBornDate($bornDate);
+
+        $user->setId($id)
+            ->setFirstname($firstname)
+            ->setLastname($lastname)
+            ->setEmail($email)
+            ->setBornDate($bornDate)
+            ->isMinor();
 
         return true;
+    }
+
+    public function isMinor()
+    {
+        $currentDate = new \DateTime();
+        $currentDate->sub(new \DateInterval('P18Y'));
+        $interval = $this->bornDate->diff($currentDate);
+
+        if ($interval->format('%R') == '+' ) {
+            $this->setMinor(true);
+
+            return true;
+        }
+
+        $emailManager = new EmailSender();
+        $emailManager->sendEmail($this->getEmail(), "You are minor");
     }
 }

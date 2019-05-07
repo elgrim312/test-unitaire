@@ -14,7 +14,7 @@ class DBConnection
 
     public function save($entity): bool
     {
-        echo $entity;
+        echo "save exchange";
 
         return true;
     }

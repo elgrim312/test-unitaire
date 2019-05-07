@@ -4,6 +4,8 @@
 namespace App\Util;
 
 
+use Exception;
+
 class Product
 {
     /**
@@ -19,7 +21,7 @@ class Product
     /**
      * @var User
      */
-    private $user;
+    private $owner;
 
     /**
      * @return int
@@ -50,41 +52,50 @@ class Product
     /**
      * @param string $title
      * @return Product
+     * @throws Exception
      */
     public function setTitle(string $title): Product
     {
-        $this->title = $title;
-        return $this;
+        if (!empty($title)) {
+            $this->title = $title;
+            return $this;
+        }
+
+        throw new Exception('Invalid title value');
     }
 
     /**
      * @return User
      */
-    public function getUser(): User
+    public function getOwner(): User
     {
-        return $this->user;
+        return $this->owner;
     }
 
     /**
-     * @param User $user
+     * @param User $owner
      * @return Product
+     * @throws Exception
      */
-    public function setUser(User $user): Product
+    public function setOwner(User $owner): Product
     {
-        $this->user = $user;
-        return $this;
+        if (!empty($owner)) {
+            $this->owner = $owner;
+            return $this;
+        }
+        throw new Exception('Invalid owner value');
     }
 
 
-    public function isValid($id, $title, $user)
+    public function isValid($id, $title, $owner)
     {
         $product = new Product();
 
         $product->setId($id)
             ->setTitle($title)
-            ->setUser($user)
+            ->setOwner($owner)
         ;
 
-        return $product;
+        return true;
     }
 }

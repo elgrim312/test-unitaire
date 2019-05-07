@@ -62,11 +62,16 @@ class User
     /**
      * @param string $firstname
      * @return User
+     * @throws Exception
      */
     public function setFirstname(string $firstname): User
     {
-        $this->firstname = $firstname;
-        return $this;
+        if (!empty($firstname)) {
+            $this->firstname = $firstname;
+            return $this;
+        }
+
+        throw new Exception('Invalid firstname value');
     }
 
     /**
@@ -80,12 +85,16 @@ class User
     /**
      * @param string $lastname
      * @return User
+     * @throws Exception
      */
     public function setLastname(string $lastname): User
     {
-        $this->lastname = $lastname;
+        if (!empty($lastname)) {
+            $this->lastname = $lastname;
+            return $this;
+        }
 
-        return $this;
+        throw new Exception('Invalid firstname value');
     }
 
     /**
@@ -136,7 +145,7 @@ class User
             return $this;
         }
 
-        throw new Exception('Invalide born date value');
+        throw new Exception('Invalide birthdate value');
 
     }
 
@@ -150,6 +159,6 @@ class User
         $user->setEmail($email);
         $user->setBornDate($bornDate);
 
-        return $user;
+        return true;
     }
 }

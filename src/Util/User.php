@@ -160,7 +160,7 @@ class User
             return $this;
         }
 
-        throw new Exception('Invalide born date value');
+        throw new Exception('Invalide born date value (-13)');
 
     }
 
@@ -184,24 +184,30 @@ class User
     {
         $user = new User();
 
-        $user->setId($id);
-        $user->setFirstname($firstname);
-        $user->setLastname($lastname);
-        $user->setEmail($email);
-        $user->setBornDate($bornDate);
-        $user->setMinor($user->isMinor());
+
+        $user->setId($id)
+            ->setFirstname($firstname)
+            ->setLastname($lastname)
+            ->setEmail($email)
+            ->setBornDate($bornDate)
+            ->isMinor();
 
         return true;
     }
 
-    public function isMinor(): bool {
+    public function isMinor()
+    {
         $currentDate = new \DateTime();
         $currentDate->sub(new \DateInterval('P18Y'));
         $interval = $this->bornDate->diff($currentDate);
 
         if ($interval->format('%R') == '+' ) {
-            return false;
+            $this->setMinor(true);
+
+            return true;
         }
-        return true;
+
+        $emailManager = new EmailSender();
+        $emailManager->sendEmail($this->getEmail(), "You are minor");
     }
 }
